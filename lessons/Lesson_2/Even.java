@@ -1,5 +1,3 @@
-package Lesson_2;
-
 class Even {
     public static void main(String[] args) {
         // whileEven();

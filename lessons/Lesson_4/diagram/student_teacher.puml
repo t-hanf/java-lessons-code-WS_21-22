@@ -1,0 +1,34 @@
+@startuml
+class Person {
+    - name : String
+    - age : Integer
+    - email : String
+
+    + String getName()
+    + Integer getAge()
+    + void sendEmail()
+}
+
+class Teacher {
+    - salary : Float
+    - hours : Integer
+    - subjects : Subjects[]
+
+    + teach(subject : Subject)
+}
+
+
+class Student {
+    - lessons : Lesson[]
+    - className : String
+
+    + addLesson(lesson : Lesson)
+
+}
+
+
+Person <|--- Student
+Person <|--- Teacher
+Teacher -[hidden]> Student
+
+@enduml

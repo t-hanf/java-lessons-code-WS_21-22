@@ -1,0 +1,14 @@
+@startuml
+class Student {
+    - name : String
+    - age : Integer
+    - email : String
+    - lessons : Lesson[]
+    - className : String
+
+    + addLesson(lesson : Lesson)
+    + String getName()
+    + Integer getAge()
+    + void sendEmail()
+}
+@enduml

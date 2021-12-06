@@ -1,0 +1,28 @@
+@startuml
+left to right direction
+
+class Library {
+    + Library()
+    + insertBook(newBook: Book) : boolean
+    + printLibrary():void
+}
+
+class Book {
+    - isbn:String
+    - author:String = ""
+    - title:String=""
+    
+    + Book(isbn:String, author:String, title:String)
+    + Book(isbn:String)
+    + getIsbn():String
+    + getAuthor():String
+    + getTitle():String
+    + equals(book:Object):boolean
+}
+
+interface java.util.List<Book>
+
+Library --> "- stock"  java.util.List 
+
+java.util.List o--> "0..*" Book
+@enduml

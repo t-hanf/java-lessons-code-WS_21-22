@@ -1,0 +1,38 @@
+@startuml
+left to right direction
+
+class Library {
+    + Library()
+    + insertBook(newBook: Book) : boolean
+    + printLibrary():void
+}
+
+interface java.lang.Comparable<T>{
+    + compareTo(t:T):int
+}
+
+class Book {
+    - isbn:String
+    - author:String = ""
+    - title:String=""
+    
+    + Book(isbn:String, author:String, title:String)
+    + Book(isbn:String)
+    + getIsbn():String
+    + getAuthor():String
+    + getTitle():String
+    + equals(book:Object):boolean
+}
+
+
+
+interface java.util.List<Book>
+
+Library --> "- stock"  java.util.List 
+
+Book ..|> java.lang.Comparable
+
+java.util.List o--> "0..*" Book
+
+
+@enduml

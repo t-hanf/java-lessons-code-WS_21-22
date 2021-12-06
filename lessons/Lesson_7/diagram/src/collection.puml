@@ -1,0 +1,45 @@
+@startuml
+
+interface Iterable
+interface Collection
+interface List
+interface Queue
+interface Set
+
+class ArrayList
+class LinkedList
+class Vector
+class Stack
+
+class PriorityQueue
+interface Deque
+class ArrayDeque
+
+class HashSet
+class LinkedHashSet
+interface SortedSet
+class TreeSet
+
+
+Iterable <|-- Collection
+Collection <|-- List
+Collection <|-- Queue
+Collection <|-- Set
+
+List <|-- ArrayList
+List <|-- LinkedList
+List <|-- Vector
+Vector <|-- Stack
+
+Queue <|-- PriorityQueue
+Queue <|-- Deque
+Deque <|-- ArrayDeque
+
+Set <|-- HashSet
+Set <|-- LinkedHashSet
+Set <|-- SortedSet
+SortedSet <|-- TreeSet
+
+
+
+@enduml

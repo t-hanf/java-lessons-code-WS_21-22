@@ -1,0 +1,46 @@
+@startuml
+
+
+class Library {
+    + Library()
+    + insertBook(newBook: Book) : boolean
+    + searchByIsbn(isbn:string) : Book
+    + printLibrary():void
+}
+
+interface java.lang.Comparable<T>{
+    + compareTo(t:T):int
+}
+
+class Book {
+    - isbn:String
+    - author:String = ""
+    - title:String=""
+    
+    + Book(isbn:String, author:String, title:String)
+    + Book(isbn:String)
+    + getIsbn():String
+    + getAuthor():String
+    + getTitle():String
+    + equals(book:Object):boolean
+}
+
+class java.util.Collections {
+    + <T> binarySearch(List<? extends Comparable<? super T>> list, T key):int
+    + <T extends Comparable<? super T>> void sort​(List<T> list):void
+}
+
+
+
+interface java.util.List<Book>
+
+Library --> "- stock"  java.util.List 
+
+Book ..|> java.lang.Comparable
+
+java.util.List o--> "0..*" Book
+
+Library ..> java.util.Collections : "<<use>>"
+
+
+@enduml

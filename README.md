@@ -22,3 +22,5 @@ For this to work you need a **git** client
 2. Click the copy button. This will copy the link to the repo.
 3. In your **git** client clone this repository (for the normal git client: `git clone https://github.com/t-hanf/java-lessons-code.git`)
 4. To update your local copy **pull** the repository (`git pull`)
+
+Test
